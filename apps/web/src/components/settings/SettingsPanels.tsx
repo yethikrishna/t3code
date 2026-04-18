@@ -17,11 +17,11 @@ import {
   type ProviderKind,
   type ServerProvider,
   type ServerProviderModel,
-} from "@t3tools/contracts";
-import { scopeThreadRef } from "@t3tools/client-runtime";
-import { DEFAULT_UNIFIED_SETTINGS } from "@t3tools/contracts/settings";
-import { normalizeModelSlug } from "@t3tools/shared/model";
-import { createModelSelection } from "@t3tools/shared/model";
+} from "@ytools/contracts";
+import { scopeThreadRef } from "@ytools/client-runtime";
+import { DEFAULT_UNIFIED_SETTINGS } from "@ytools/contracts/settings";
+import { normalizeModelSlug } from "@ytools/shared/model";
+import { createModelSelection } from "@ytools/shared/model";
 import { Equal } from "effect";
 import { APP_VERSION } from "../../branding";
 import {
