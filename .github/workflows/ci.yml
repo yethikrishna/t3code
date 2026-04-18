@@ -26,7 +26,7 @@ jobs:
           node-version-file: package.json
 
       - name: Cache Bun and Turbo
-        uses: actions/
+        uses: actions/cache@v4
         with:
           path: |
             ~/.bun/install/cache
