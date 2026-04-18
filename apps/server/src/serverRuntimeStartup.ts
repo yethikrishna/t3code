@@ -5,7 +5,7 @@ import {
   type ModelSelection,
   ProjectId,
   ThreadId,
-} from "@t3tools/contracts";
+} from "@ytools/contracts";
 import {
   Data,
   Deferred,

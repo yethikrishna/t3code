@@ -22,7 +22,7 @@ import {
   WS_METHODS,
   WsRpcGroup,
   EditorId,
-} from "@t3tools/contracts";
+} from "@ytools/contracts";
 import { assert, it } from "@effect/vitest";
 import { assertFailure, assertInclude, assertTrue } from "@effect/vitest/utils";
 import {
@@ -193,6 +193,7 @@ const makeDefaultOrchestrationThreadShell = (
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const workspaceAndProjectServicesLayer = Layer.mergeAll(
   WorkspacePathsLive,
   WorkspaceEntriesLive.pipe(Layer.provide(WorkspacePathsLive)),

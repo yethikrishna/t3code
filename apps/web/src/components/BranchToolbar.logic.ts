@@ -1,9 +1,9 @@
-import type { EnvironmentId, GitBranch, ProjectId } from "@t3tools/contracts";
+import type { EnvironmentId, GitBranch, ProjectId } from "@ytools/contracts";
 import { Schema } from "effect";
 export {
   dedupeRemoteBranchesWithLocalMatches,
   deriveLocalBranchNameFromRemoteRef,
-} from "@t3tools/shared/git";
+} from "@ytools/shared/git";
 
 export interface EnvironmentOption {
   environmentId: EnvironmentId;

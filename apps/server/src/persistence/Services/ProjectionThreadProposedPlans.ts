@@ -4,7 +4,7 @@ import {
   ThreadId,
   TrimmedNonEmptyString,
   TurnId,
-} from "@t3tools/contracts";
+} from "@ytools/contracts";
 import { Schema, Context } from "effect";
 import type { Effect } from "effect";
 
