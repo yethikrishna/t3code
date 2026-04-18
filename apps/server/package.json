@@ -7,8 +7,12 @@
     "url": "https://github.com/yethikrishna/t3code",
     "directory": "apps/server"
   },
-  "bin": { "ycode": "./dist/bin.mjs" },
-  "files": ["dist"],
+  "bin": {
+    "ycode": "./dist/bin.mjs"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "node --watch src/bin.ts",
@@ -34,11 +38,11 @@
   "devDependencies": {
     "@effect/language-service": "catalog:",
     "@effect/vitest": "catalog:",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
     "@ytools/contracts": "workspace:*",
     "@ytools/shared": "workspace:*",
     "@ytools/web": "workspace:*",
-    "@types/bun": "catalog:",
-    "@types/node": "catalog:",
     "effect-acp": "workspace:*",
     "tsdown": "catalog:",
     "typescript": "catalog:",

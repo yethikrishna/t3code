@@ -150,7 +150,7 @@ jobs:
               echo "make_latest=false" >> "$GITHUB_OUTPUT"
             fi
           fi
-          
+
       - name: Lint
         run: bun run lint
 
@@ -393,7 +393,6 @@ jobs:
     runs-on: ubuntu-24.04 # blacksmith-8vcpu-ubuntu-2404
     timeout-minutes: 10
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
         with:

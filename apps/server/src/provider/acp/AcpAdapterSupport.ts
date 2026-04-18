@@ -1,8 +1,4 @@
-import {
-  type ProviderApprovalDecision,
-  type ProviderKind,
-  type ThreadId,
-} from "@ytools/contracts";
+import { type ProviderApprovalDecision, type ProviderKind, type ThreadId } from "@ytools/contracts";
 import { Schema } from "effect";
 import * as EffectAcpErrors from "effect-acp/errors";
 

@@ -2,7 +2,9 @@
   "name": "@ytools/contracts",
   "version": "0.0.20",
   "private": true,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
