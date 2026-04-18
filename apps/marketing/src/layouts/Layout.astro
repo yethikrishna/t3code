@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = "T3 Code",
-  description = "T3 Code — The best way to code with AI.",
+  title = "yCode",
+  description = "yCode — The best way to code with AI.",
 } = Astro.props;
 ---
 
@@ -31,10 +31,10 @@ const {
     <div class="page">
       <nav class="nav">
         <a href="/" class="nav-brand">
-          <img src="/icon.png" alt="T3" class="nav-icon" />
+          <img src="/icon.png" alt="yCode" class="nav-icon" />
         </a>
         <a
-          href="https://github.com/pingdotgg/t3code"
+          href="https://github.com/yethikrishna/t3code"
           target="_blank"
           rel="noopener noreferrer"
           class="nav-github"
@@ -49,10 +49,9 @@ const {
       </main>
 
       <footer class="footer">
-        <span class="footer-copy">&copy; {new Date().getFullYear()} T3 Tools Inc</span>
+        <span class="footer-copy">&copy; {new Date().getFullYear()} yCode</span>
         <div class="footer-links">
-          <a href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://discord.gg/jn4EGJjrvv" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://github.com/yethikrishna/t3code" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </footer>
     </div>
@@ -123,16 +122,12 @@ const {
 </style>
 
 <style>
-  /* ── Page ── */
-
   .page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
   }
-
-  /* ── Navbar ── */
 
   .nav {
     display: flex;
@@ -180,16 +175,12 @@ const {
     transform: translateX(2px) translateY(-1px);
   }
 
-  /* ── Main content ── */
-
   .main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  /* ── Footer ── */
 
   .footer {
     display: flex;
@@ -213,8 +204,6 @@ const {
   .footer-links a:hover {
     color: var(--fg);
   }
-
-  /* ── Mobile ── */
 
   @media (max-width: 640px) {
     .nav {
