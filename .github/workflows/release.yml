@@ -179,12 +179,12 @@ jobs:
       matrix:
         include:
           - label: macOS arm64
-            runner: 	macos-latest
+            runner: macos-latest
             platform: mac
             target: dmg
             arch: arm64
           - label: macOS x64
-            runner: 	macos-latest
+            runner: macos-latest
             platform: mac
             target: dmg
             arch: x64
