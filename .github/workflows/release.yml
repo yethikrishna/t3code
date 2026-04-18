@@ -485,7 +485,7 @@ jobs:
             release-assets/*.blockmap
             release-assets/*.yml
           fail_on_unmatched_files: true
-          token: ${{ steps.app_token.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish first release
         if: needs.preflight.outputs.previous_tag == ''
@@ -505,7 +505,7 @@ jobs:
             release-assets/*.blockmap
             release-assets/*.yml
           fail_on_unmatched_files: true
-          token: ${{ steps.app_token.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   finalize:
     name: Finalize release
@@ -527,14 +527,14 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-          token: ${{ steps.app_token.outputs.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
       - id: app_bot
         name: Resolve GitHub App bot identity
         env:
-          GH_TOKEN: ${{ steps.app_token.outputs.token }}
-          APP_SLUG: ${{ steps.app_token.outputs.app-slug }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APP_SLUG: ${{ secrets.GITHUB_TOKEN.app-slug }}
         run: |
           user_id="$(gh api "/users/${APP_SLUG}[bot]" --jq .id)"
           echo "name=${APP_SLUG}[bot]" >> "$GITHUB_OUTPUT"
