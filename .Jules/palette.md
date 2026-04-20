@@ -1,0 +1,1 @@
+## 2026-04-20 - Add ARIA label to Copy Error button\n**Learning:** The `CopyErrorButton` in the toast notification lacked an accessible name for screen readers, as it only contained an icon and a `title` attribute, which is not reliably read by all screen readers.\n**Action:** Add `aria-label` attributes to all icon-only buttons to ensure they have an accessible name.
