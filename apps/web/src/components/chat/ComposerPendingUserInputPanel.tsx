@@ -151,6 +151,7 @@ const ComposerPendingUserInputCard = memo(function ComposerPendingUserInputCard(
               type="button"
               disabled={isResponding}
               onClick={() => handleOptionSelection(activeQuestion.id, option.label)}
+              aria-pressed={isSelected}
               className={cn(
                 "group flex w-full items-center gap-3 rounded-lg border px-3 py-2 text-left transition-all duration-150",
                 isSelected
