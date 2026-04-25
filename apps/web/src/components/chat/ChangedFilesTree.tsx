@@ -59,6 +59,8 @@ export const ChangedFilesTree = memo(function ChangedFilesTree(props: {
         <div key={`dir:${node.path}`}>
           <button
             type="button"
+            aria-expanded={isExpanded}
+            aria-label={`${isExpanded ? "Collapse" : "Expand"} directory ${node.name}`}
             data-scroll-anchor-ignore
             className="group flex w-full items-center gap-1.5 rounded-md py-1 pr-2 text-left hover:bg-background/80"
             style={{ paddingLeft: `${leftPadding}px` }}
@@ -98,6 +100,7 @@ export const ChangedFilesTree = memo(function ChangedFilesTree(props: {
       <button
         key={`file:${node.path}`}
         type="button"
+        aria-label={`View changes for file ${node.name}`}
         className="group flex w-full items-center gap-1.5 rounded-md py-1 pr-2 text-left hover:bg-background/80"
         style={{ paddingLeft: `${leftPadding}px` }}
         onClick={() => onOpenTurnDiff(turnId, node.path)}
