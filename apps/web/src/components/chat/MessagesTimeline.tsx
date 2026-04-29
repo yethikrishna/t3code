@@ -551,6 +551,7 @@ const WorkGroupSection = memo(function WorkGroupSection({
           {hasOverflow && (
             <button
               type="button"
+              aria-expanded={isExpanded}
               className="text-[9px] uppercase tracking-[0.12em] text-muted-foreground/55 transition-colors duration-150 hover:text-foreground/75"
               onClick={() => setIsExpanded((v) => !v)}
             >
