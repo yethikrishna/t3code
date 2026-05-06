@@ -1,0 +1,3 @@
+## 2024-05-15 - ARIA Labels on Combobox Triggers
+**Learning:** Found that custom combobox triggers wrapping generic buttons (like `render={<Button variant="ghost" size="xs" />}`) often miss proper ARIA labels. Since they typically contain text like a branch name + an icon, screen readers may not clearly identify the element's purpose as a branch selector.
+**Action:** Always ensure that `ComboboxTrigger` components, especially those acting as key navigation/context switches, explicitly define an `aria-label` attribute describing their purpose (e.g., "Select branch") rather than relying solely on the dynamic trigger text.
