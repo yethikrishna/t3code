@@ -575,6 +575,7 @@ export function BranchToolbarBranchSelector({
         render={<Button variant="ghost" size="xs" />}
         className="text-muted-foreground/70 hover:text-foreground/80"
         disabled={(isBranchesSearchPending && branches.length === 0) || isBranchActionPending}
+        aria-label="Select branch"
       >
         <span className="max-w-[240px] truncate">{triggerLabel}</span>
         <ChevronDownIcon />
