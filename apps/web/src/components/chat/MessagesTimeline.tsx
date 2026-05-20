@@ -8,6 +8,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useId,
   type ReactNode,
 } from "react";
 import { LegendList, type LegendListRef } from "@legendapp/list/react";
@@ -531,6 +532,8 @@ const WorkGroupSection = memo(function WorkGroupSection({
 }) {
   const { workspaceRoot } = use(TimelineRowCtx);
   const [isExpanded, setIsExpanded] = useState(false);
+  const idBase = useId();
+  const listId = `timeline-work-log-list-${idBase}`;
   const hasOverflow = groupedEntries.length > MAX_VISIBLE_WORK_LOG_ENTRIES;
   const visibleEntries =
     hasOverflow && !isExpanded
@@ -553,13 +556,15 @@ const WorkGroupSection = memo(function WorkGroupSection({
               type="button"
               className="text-[9px] uppercase tracking-[0.12em] text-muted-foreground/55 transition-colors duration-150 hover:text-foreground/75"
               onClick={() => setIsExpanded((v) => !v)}
+              aria-expanded={isExpanded}
+              aria-controls={listId}
             >
               {isExpanded ? "Show less" : `Show ${hiddenCount} more`}
             </button>
           )}
         </div>
       )}
-      <div className="space-y-0.5">
+      <div id={listId} className="space-y-0.5">
         {visibleEntries.map((workEntry) => (
           <SimpleWorkEntryRow
             key={`work-row:${workEntry.id}`}
