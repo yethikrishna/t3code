@@ -362,6 +362,7 @@ function TimelineRowContent({ row }: { row: TimelineRow }) {
                         disabled={ctx.isRevertingCheckpoint || ctx.isWorking}
                         onClick={() => ctx.onRevertUserMessage(row.message.id)}
                         title="Revert to this message"
+                        aria-label="Revert to this message"
                       >
                         <Undo2Icon className="size-3" />
                       </Button>
