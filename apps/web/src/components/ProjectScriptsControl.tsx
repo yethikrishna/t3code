@@ -340,7 +340,13 @@ export default function ProjectScriptsControl({
           </Menu>
         </Group>
       ) : (
-        <Button size="xs" variant="outline" onClick={openAddDialog} title="Add action">
+        <Button
+          size="xs"
+          variant="outline"
+          onClick={openAddDialog}
+          title="Add action"
+          aria-label="Add action"
+        >
           <PlusIcon className="size-3.5" />
           <span className="sr-only @3xl/header-actions:not-sr-only @3xl/header-actions:ml-0.5">
             Add action
