@@ -1,0 +1,3 @@
+## 2026-06-12 - [Update ARIA labels for Open in editor]
+**Learning:** Using copy-pasted components or incorrect ARIA labels (like "Subscription actions" on an editor picker) can severely disorient screen reader users, breaking context entirely. Additionally, changing these labels requires ensuring no browser tests rely on the incorrect label as a DOM selector.
+**Action:** Always verify `aria-label` context applies to the current component rather than inherited boilerplate, and search for corresponding test DOM queries before finalizing the update.
