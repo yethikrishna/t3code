@@ -53,6 +53,7 @@ import { Menu, MenuItem, MenuPopup, MenuShortcut, MenuTrigger } from "./ui/menu"
 import { Popover, PopoverPopup, PopoverTrigger } from "./ui/popover";
 import { Switch } from "./ui/switch";
 import { Textarea } from "./ui/textarea";
+import { Tooltip, TooltipPopup, TooltipTrigger } from "./ui/tooltip";
 
 const SCRIPT_ICONS: Array<{ id: ProjectScriptIcon; label: string }> = [
   { id: "play", label: "Play" },
@@ -270,17 +271,19 @@ export default function ProjectScriptsControl({
     <>
       {primaryScript ? (
         <Group aria-label="Project scripts">
-          <Button
-            size="xs"
-            variant="outline"
-            onClick={() => onRunScript(primaryScript)}
-            title={`Run ${primaryScript.name}`}
-          >
-            <ScriptIcon icon={primaryScript.icon} />
-            <span className="sr-only @3xl/header-actions:not-sr-only @3xl/header-actions:ml-0.5">
-              {primaryScript.name}
-            </span>
-          </Button>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Button size="xs" variant="outline" onClick={() => onRunScript(primaryScript)}>
+                  <ScriptIcon icon={primaryScript.icon} />
+                  <span className="sr-only @3xl/header-actions:not-sr-only @3xl/header-actions:ml-0.5">
+                    {primaryScript.name}
+                  </span>
+                </Button>
+              }
+            />
+            <TooltipPopup side="bottom">Run {primaryScript.name}</TooltipPopup>
+          </Tooltip>
           <GroupSeparator className="hidden @3xl/header-actions:block" />
           <Menu highlightItemOnHover={false}>
             <MenuTrigger
@@ -340,12 +343,19 @@ export default function ProjectScriptsControl({
           </Menu>
         </Group>
       ) : (
-        <Button size="xs" variant="outline" onClick={openAddDialog} title="Add action">
-          <PlusIcon className="size-3.5" />
-          <span className="sr-only @3xl/header-actions:not-sr-only @3xl/header-actions:ml-0.5">
-            Add action
-          </span>
-        </Button>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button size="xs" variant="outline" onClick={openAddDialog}>
+                <PlusIcon className="size-3.5" />
+                <span className="sr-only @3xl/header-actions:not-sr-only @3xl/header-actions:ml-0.5">
+                  Add action
+                </span>
+              </Button>
+            }
+          />
+          <TooltipPopup side="bottom">Add action</TooltipPopup>
+        </Tooltip>
       )}
 
       <Dialog
