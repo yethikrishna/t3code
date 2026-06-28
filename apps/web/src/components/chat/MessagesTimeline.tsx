@@ -355,16 +355,23 @@ function TimelineRowContent({ row }: { row: TimelineRow }) {
                       <MessageCopyButton text={displayedUserMessage.copyText} />
                     )}
                     {canRevertAgentWork && (
-                      <Button
-                        type="button"
-                        size="xs"
-                        variant="outline"
-                        disabled={ctx.isRevertingCheckpoint || ctx.isWorking}
-                        onClick={() => ctx.onRevertUserMessage(row.message.id)}
-                        title="Revert to this message"
-                      >
-                        <Undo2Icon className="size-3" />
-                      </Button>
+                      <Tooltip>
+                        <TooltipTrigger
+                          render={
+                            <Button
+                              type="button"
+                              size="xs"
+                              variant="outline"
+                              disabled={ctx.isRevertingCheckpoint || ctx.isWorking}
+                              onClick={() => ctx.onRevertUserMessage(row.message.id)}
+                              aria-label="Revert to this message"
+                            />
+                          }
+                        >
+                          <Undo2Icon className="size-3" />
+                        </TooltipTrigger>
+                        <TooltipPopup>Revert to this message</TooltipPopup>
+                      </Tooltip>
                     )}
                   </div>
                   <p className="text-right text-xs text-muted-foreground/50">
