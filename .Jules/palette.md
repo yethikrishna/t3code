@@ -1,0 +1,3 @@
+## 2024-05-14 - Tooltip vs Title for Icon-Only Buttons
+**Learning:** Found that `apps/web/src/components/ProjectScriptsControl.tsx` was using native `title` attributes on buttons instead of using the standard `<Tooltip>` component. Native `title` attributes are not as accessible or visually consistent as the custom `<Tooltip>` component from `@base-ui/react/tooltip` which supports screen readers properly and aligns with the app's design system.
+**Action:** When adding labels to icon-only buttons (or replacing native titles), always prefer explicit `aria-label` along with the standard `<Tooltip>` wrapper for better accessibility and consistent UX.
