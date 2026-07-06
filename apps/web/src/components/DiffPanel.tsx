@@ -31,6 +31,7 @@ import { buildPatchCacheKey } from "../lib/diffRendering";
 import { resolveDiffThemeName } from "../lib/diffRendering";
 import { useTurnDiffSummaries } from "../hooks/useTurnDiffSummaries";
 import { selectProjectByRef, useStore } from "../store";
+import { Tooltip, TooltipPopup, TooltipTrigger } from "./ui/tooltip";
 import { createThreadSelectorByRef } from "../storeSelectors";
 import { buildThreadRouteParams, resolveThreadRouteRef } from "../threadRoutes";
 import { useSettings } from "../hooks/useSettings";
@@ -532,25 +533,49 @@ export default function DiffPanel({ mode = "inline" }: DiffPanelProps) {
             }
           }}
         >
-          <Toggle aria-label="Stacked diff view" value="stacked">
-            <Rows3Icon className="size-3" />
-          </Toggle>
-          <Toggle aria-label="Split diff view" value="split">
-            <Columns2Icon className="size-3" />
-          </Toggle>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Toggle aria-label="Stacked diff view" value="stacked">
+                  <Rows3Icon className="size-3" />
+                </Toggle>
+              }
+            />
+            <TooltipPopup>Stacked view</TooltipPopup>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Toggle aria-label="Split diff view" value="split">
+                  <Columns2Icon className="size-3" />
+                </Toggle>
+              }
+            />
+            <TooltipPopup>Split view</TooltipPopup>
+          </Tooltip>
         </ToggleGroup>
-        <Toggle
-          aria-label={diffWordWrap ? "Disable diff line wrapping" : "Enable diff line wrapping"}
-          title={diffWordWrap ? "Disable line wrapping" : "Enable line wrapping"}
-          variant="outline"
-          size="xs"
-          pressed={diffWordWrap}
-          onPressedChange={(pressed) => {
-            setDiffWordWrap(Boolean(pressed));
-          }}
-        >
-          <TextWrapIcon className="size-3" />
-        </Toggle>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Toggle
+                aria-label={
+                  diffWordWrap ? "Disable diff line wrapping" : "Enable diff line wrapping"
+                }
+                variant="outline"
+                size="xs"
+                pressed={diffWordWrap}
+                onPressedChange={(pressed) => {
+                  setDiffWordWrap(Boolean(pressed));
+                }}
+              >
+                <TextWrapIcon className="size-3" />
+              </Toggle>
+            }
+          />
+          <TooltipPopup>
+            {diffWordWrap ? "Disable line wrapping" : "Enable line wrapping"}
+          </TooltipPopup>
+        </Tooltip>
       </div>
     </>
   );
